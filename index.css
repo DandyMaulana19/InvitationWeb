@@ -44,16 +44,63 @@
     font-family: 'Dancing Script', cursive;
     font-size: 38px;
     text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
-
 }
 
 #text {
-    font-family: 'Courier Prime', monospace;
+    font-family: poppins;
     text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
 }
 
 #button {
     font-family: 'Courier Prime', monospace;
     box-shadow: 0 8px 32px 0 rgba(37, 37, 37, 0.37);
+}
 
+#header {
+    background-image: url(./assets/foto2.jpg);
+    background-size: cover;
+}
+
+#title2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+}
+
+#salam {
+    text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+}
+
+#quotes {
+    text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+}
+
+#section {
+    background-image: url(./assets/foto3.jpg);
+    background-size: cover;
+}
+
+#sectionTitle {
+    font-family: 'Sacramento', cursive !important;
+    font-size: 38px;
+}
+
+#card {
+    background-image: url(./assets/foto4.jpg);
+    border-radius: 20px;
+    box-shadow: 10px 10px 5px -8px rgba(25,25,25,0.75);
+    -webkit-box-shadow: 10px 10px 5px -8px rgba(25,25,25,0.75);
+    -moz-box-shadow: 10px 10px 5px -8px rgba(25,25,25,0.75);
+}
+
+#cardHeader {
+    max-width: max-content;
+}
+
+#chip {
+
+}
+
+#Dalil {
+    background-color: rgb(75, 75, 75);
 }
