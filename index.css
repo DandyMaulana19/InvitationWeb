@@ -5,11 +5,16 @@
     --formal-font: 'Montserrat', sans-serif;
     --style-font: 'Great Vibes', cursive;
     --secondary-font: 'Courgette', cursive;
+    --atm-font: 'credit-card-regular', sans-serif;
 }
 
 * {
-    /* margin: 0px; */
-    /* padding: 0px; */
+    margin: 0px;
+    padding: 0px;
+}
+
+section {
+    border: none;
 }
 
 #card {
@@ -18,4 +23,9 @@
 
 #btnLoc {
     box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.30);
+}
+
+#atm{
+    background-image: url("./assets/bgATM.jpg");
+    background-size: cover;
 }
