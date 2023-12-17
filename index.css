@@ -15,6 +15,10 @@
   font-family: var(--formal-font);
 }
 
+body > *{
+  overflow-x: hidden;
+}
+
 section {
   border: none;
 }
