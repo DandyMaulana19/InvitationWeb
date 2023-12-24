@@ -8,11 +8,26 @@
     <link rel="stylesheet" href="index.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Courgette&family=Great+Vibes&family=Montserrat:wght@500&display=swap");
+      @import url("https://fonts.cdnfonts.com/css/fall-in-love");
+      @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&display=swap");
     </style>
+    <link href="https://fonts.cdnfonts.com/css/fall-in-love" rel="stylesheet" />
     <link
       href="https://www.dafontfree.net/embed/Y3JlZGl0LWNhcmQtcmVndWxhciZkYXRhLzE3L2MvODUyNTEvQ1JFRENfX18udHRm"
       rel="stylesheet"
       type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -25,9 +40,24 @@
   <body>
     <section id="cover" style="width: 100vw; height: 100vh">
       <div
-        class="row position-relative justify-content-center d-flex align-items-center h-100"
+        class="row position-relative justify-content-center align-items-center h-100"
         style="z-index: 1"
       >
+        <audio id="audio" controls loop style="visibility: hidden">
+          <source
+            src="assets/Christina Perri - A Thousand Years [Official Music Video] (mp3cut.net).mp3"
+            type="audio/mp3"
+          />
+          Your browser does not support the audio element.
+        </audio>
+
+        <!-- Tombol Play/Pause -->
+        <div id="audio-controls" class="fixed-controls">
+          <button id="playpausebtn" class="btn btn-link">
+            <img id="playpauseimg" src="play-icon.png" alt="Play" />
+          </button>
+        </div>
+
         <img
           src="./assets/15858308_5665950.png"
           class="position-absolute"
@@ -39,24 +69,32 @@
             filter: drop-shadow(0px 0px 7px rgb(0 0 0 / 0.4));
           "
         />
+
         <div
-          class="col-12 ps-4 align d-flex justify-content-start align-items-end"
+          class="col-12 align d-flex justify-content-start align-items-end"
           style="
             height: 100%;
             background: linear-gradient(
               360deg,
               white 27%,
-              rgba(255, 255, 255, 0) 66%
+              rgba(255, 255, 255, 0) 50%
             );
           "
         >
-          <div class="mb-5">
-            <p class="mb-0" style="font-family: var(--formal-font)">
-              THE WEDDING OF
+          <div class="mb-md-5">
+            <p
+              class="overflow-hidden"
+              style="font-family: 'Fall in love', sans-serif; font-size: 24px"
+            >
+              The Wedding of
             </p>
             <h1
-              class="fw-bolder mb-3"
-              style="color: var(--main-color); font-family: var(--formal-font)"
+              class="fw-bolder mb-3 overflow-hidden"
+              style="
+                color: var(--main-color);
+                font-family: var(--new-font);
+                font-size: 34px;
+              "
             >
               FIKRI & PRITA
             </h1>
@@ -68,7 +106,7 @@
               Buka Undangan
             </button>
           </div>
-          <img src="./assets/Untitled-1.png" width="200px" alt="" />
+          <!-- <img src="./assets/Untitled-1.png" width="200px" alt="" /> -->
         </div>
       </div>
     </section>
@@ -106,13 +144,18 @@
       <div class="container py-5">
         <div class="row text-center" style="margin-bottom: 5rem; width: 100vw">
           <h4
-            class="fw-semibold"
-            style="margin-bottom: 4rem; color: var(--main-color)"
+            class="overflow-hidden"
+            style="
+              margin-bottom: 4rem;
+              color: var(--main-color);
+              font-family: Fall in love, sans-serif;
+              font-size: 34px;
+            "
           >
-            THE WEDDING OF
+            The Wedding of
           </h4>
           <div
-            class="col-12 mb-5 d-flex justify-content-center align-items-center"
+            class="col-12 mb-3 d-flex justify-content-center align-items-center"
           >
             <div
               class="d-block rounded-circle"
@@ -127,35 +170,38 @@
               <img
                 src="./assets/profile1.svg"
                 class="position-absolute"
-                style="width: 125px; height: 125px; top: 270px; right: 35px"
+                style="width: 125px; height: 125px; top: 0px; right: -10px"
                 alt=""
                 id="profile1"
               />
               <img
                 src="./assets/profile1l.svg"
                 class="position-absolute"
-                style="width: 125px; height: 125px; top: 150px; left: 25px"
+                style="width: 125px; height: 125px; top: 0px; left: 0px"
                 alt=""
                 id="profile1l"
               />
             </div>
           </div>
-          <div class="col-12 px-5">
+          <div class="col-12 px-3 px-md-5">
             <h1
               class="mb-2"
               style="
                 font-family: var(--secondary-font);
                 color: var(--main-color);
+                font-size: 44px;
               "
             >
-              Fikri & Prita
+              Fikri <span style="font-size: 30px; color: var(--main-color);">
+                &hearts;
+              </span> Prita
             </h1>
-            <p class="mb-5" style="font-size: 12px">
-              Kami berharap Anda menjadi bagian dari hari istimewa kami!
+            <p class="mb-5" style="font-size: 14px">
+              Kami berharap Anda menjadi bagian dari hari istimewa kami
             </p>
           </div>
           <div
-            class="col-12 mb-4 d-flex gap-3 justify-content-center fs-6 align-items-center text-center text-white"
+            class="col-12 mb-4 d-flex gap-2 justify-content-center fs-6 align-items-center text-center text-white"
           >
             <div
               class="btn"
@@ -199,7 +245,7 @@
             ></div>
           </div>
           <div class="col-12 d-block">
-            <p class="mb-4" style="font-size: 12px">Ahad, 18 Ferbruari 2024</p>
+            <p class="mb-3" style="font-size: 14px">Ahad, 18 Februari 2024</p>
             <button
               class="btn text-white"
               style="background-color: var(--main-color)"
@@ -212,15 +258,15 @@
           src="./assets/1a.png"
           class="position-absolute"
           alt=""
-          width="200px"
-          style="top: 750px; left: -80px"
+          width="150px"
+          style="top: 750px; left: -30px"
         />
         <img
           src="./assets/1a.png"
           class="position-absolute"
           alt=""
-          width="200px"
-          style="bottom: 500px; left: 100px"
+          width="150px"
+          style="bottom: 500px; left: 50px"
         />
         <div
           class="row mb-3 text-center justify-content-center align-items-center"
@@ -229,14 +275,14 @@
             src="./assets/bismillah.svg"
             class="mb-4 mt-5"
             alt=""
-            style="width: 200px"
+            style="width: 280px"
           />
           <div
             class="col-12 mb-2 fst-italic"
             style="
               font-family: var(--style-font);
               color: var(--text-color);
-              font-size: 28px;
+              font-size: 34px;
             "
           >
             Assalamualaikum Wr. Wb.
@@ -246,7 +292,7 @@
             style="
               font-family: var(--formal-font);
               color: var(--text-color);
-              font-size: 12px;
+              font-size: 14px;
             "
           >
             <p>
@@ -256,38 +302,50 @@
           </div>
         </div>
         <div class="row mb-3 text-center">
-          <div class="col-12 mb-3 d-inline">
-            <img
-              src="./assets/img/unsplash_wSBQFWF77lI.png"
-              alt=""
-              class="rounded-circle position-relative"
-              width="200"
-              height="200"
-            />
-            <!-- <img
+          <div
+            class="col-12 mb-5 d-flex justify-content-center align-items-center position-relative"
+          >
+            <div
+              class="d-block rounded-circle"
+              style="
+                width: 250px;
+                height: 250px;
+                overflow: hidden;
+                background-position: start;
+              "
+            >
+              <img
+                src="./assets/img/Prita.jpg"
+                alt=""
+                id="countdownImg"
+                width="100"
+                height="100"
+              />
+              <!-- <img
               src="./assets/13379092_5222178.png"
               class="position-absolute"
               alt=""
               width="240"
               style="left: 60px"
             /> -->
+            </div>
           </div>
           <div class="col-12 mb-4" style="z-index: 0">
             <p
               class="fw-semibold fst-italic"
               style="
-                font-family: var(--style-font);
+                font-family: var(--secondary-font);
                 color: var(--text-color);
-                font-size: 24px;
+                font-size: 22px;
               "
             >
-              Fikri Sirrul Bari Amrullah
+              Prita Paramitha Fatmawati, S.Si., M.Si
             </p>
             <p
               class="fst-italic fw-normal"
               style="color: var(--text-color); font-size: 14px"
             >
-              Putra pertama Bapak Sunaryadi & Ibu Ida
+              Putri Kedua Bapak Jupriadi dan Ibu Siti Fatima
             </p>
             <a href="http://www.instagram.com" class=""
               ><img src="./assets/Instagram.svg" alt="" height="30" width="30"
@@ -301,32 +359,44 @@
             "
             >&</span
           >
-          <div class="col-12 mb-3 mt-3">
-            <img
-              src="./assets/img/unsplash_wSBQFWF77lI.png"
-              alt=""
-              class="rounded-circle"
-              width="200"
-              height="200"
-              style="border: 2px solid var(--button-color)"
-            />
+          <div
+            class="col-12 mb-3 mt-3 d-flex justify-content-center align-items-center position-relative"
+          >
+            <div
+              class="d-block rounded-circle"
+              style="
+                width: 250px;
+                height: 250px;
+                overflow: hidden;
+                background-position: bottom;
+                background-size: cover;
+              "
+            >
+              <img
+                src="./assets/img/Fikri.jpg"
+                alt=""
+                id="countdownImg"
+                width="100"
+                height="100"
+              />
+            </div>
           </div>
           <div class="col-12 mb-4">
             <p
               class="fw-semibold"
               style="
-                font-family: var(--style-font);
+                font-family: var(--secondary-font);
                 color: var(--text-color);
-                font-size: 24px;
+                font-size: 22px;
               "
             >
-              Fikri Sirrul Bari Amrullah
+              Fikri Sirrul Bari Amrullah, S.ST., M.Tr.P
             </p>
             <p
               class="fw-normal fst-italic"
               style="color: var(--text-color); font-size: 14px"
             >
-              Putra pertama Bapak Sunaryadi & Ibu Ida
+              Putra Pertama Bapak Sunaryadi & Ibu Ida Subaidah
             </p>
             <a href="http://www.instagram.com" class=""
               ><img src="./assets/Instagram.svg" alt="" height="30" width="30"
@@ -337,56 +407,135 @@
     </section>
 
     <section
-      style="
-        background-color: var(--secondary-color);
-        width: 100vw;
-        height: auto;
-      "
+      class=""
+      style="width: 100vw; height: auto; background-color: var(--main-color)"
     >
-      <div class="container py-3 px-5">
-        <div class="row mb-4 text-center">
+      <div class="container py-2 px-md-5">
+        <div class="row mb-0 text-center">
           <p
-            class="fst-italic fw-normal"
+            class="fst-italic fw-normal text-white"
             style="
               font-family: var(--style-font);
-              color: var(--text-color);
-              font-size: 30px;
+              font-size: 44px;
+              margin-bottom: -1px;
             "
           >
             Love Story
           </p>
         </div>
         <div class="row justify-content-between">
-          <div class="col-1 pt-5 d-flex justify-content-center">
-            <img src="./assets/Heart.svg" alt="" width="40" height="40" />
-          </div>
-          <div class="col-11 col-md-5 mb-3 align-items-center">
-            <p class="fst-italic fw-bold text-light" style="font-size: 14px">
-              2021
-            </p>
-            <div class="card w-100 p-3">
-              <h5 class="card-title mb-2">Pernikahan</h5>
-              <img src="./assets/img/Card.png" class="card-img-top" alt="..." />
+          <div class="col-12 col-md-6 mb-3">
+            <div class="card w-100 p-3 text-center">
+              <img
+                src="./assets/Heart.svg"
+                alt=""
+                class="d-block mx-auto mb-3"
+                width="40"
+                height="40"
+              />
+              <h5
+                class="card-title mb-2 fw-bold"
+                style="font-family: var(--secondary-font)"
+              >
+                The First Time We Met
+              </h5>
               <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                Bukan teman atau bahkan sahabat. Hanya orang asing yang saling
+                mengenal melalui kemajuan teknologi sosial media saat itu, tepat
+                pada 25 Juli 2022. Semua kisah indah ini, berawal dari
+                komunikasi ringan dan basa-basi yang hanya berlangsung beberapa
+                hari. Hingga pada akhirnya saat itu, 30 Juli 2022 kita bertemu
+                di Kota Malang dan saat itu juga sepakat dalam membangun sebuah
+                komitmen besar bersama. Tidak ada yang kebetulan di dunia ini,
+                semua sudah tersusun rapi dalam takdir indah sang Maha Kasih.
+                Ketika Allah menghendaki dua hati untuk bersatu, maka Allah
+                memiliki banyak cara untuk mempersatukannya sekalipun keduanya
+                membentang jauh diantara langit dan bumi.
               </p>
             </div>
           </div>
-          <div class="col-1 pt-5 d-flex justify-content-center">
-            <img src="./assets/Heart.svg" alt="" width="40" height="40" />
-          </div>
-          <div class="col-11 col-md-5 align-items-center">
-            <p class="fst-italic fw-bold text-light" style="font-size: 14px">
-              2021
-            </p>
+          <div class="col-12 col-md-6 mb-3">
             <div class="card w-100 p-3">
-              <h5 class="card-title mb-2">Pernikahan</h5>
-              <img src="./assets/img/Card.png" class="card-img-top" alt="..." />
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
+              <img
+                src="./assets/Heart.svg"
+                alt=""
+                class="d-block mx-auto mb-3"
+                width="40"
+                height="40"
+              />
+              <div class="card w-100 p-3 text-center">
+                <h5
+                  class="card-title mb-2 fw-bold"
+                  style="font-family: var(--secondary-font)"
+                >
+                  Approach Her
+                </h5>
+                <p class="card-text">
+                  Seiring berjalannya waktu, kita semakin dekat. Hari demi hari
+                  kita lewati bersama, bahkan ketika kita dihadapkan pada jalan
+                  terjal berbatu yang membuat jatuh bangun saat melaluinya, kita
+                  mampu bersabar dan terus optimis akan ada titik terang di
+                  depan. Seakan semesta terus berkonspirasi untuk menyatukan
+                  kedua insan ini. Hingga akhirnya, pada 28 Mei 2023, Lelaki itu
+                  datang seorang diri menemui orang tua wanitanya, seraya
+                  memohon izin untuk menjalani hubungan yang lebih serius lagi
+                  dengan mengutarakan niat baiknya.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 mb-3">
+            <div class="card w-100 p-3">
+              <img
+                src="./assets/Heart.svg"
+                alt=""
+                class="d-block mx-auto mb-3"
+                width="40"
+                height="40"
+              />
+              <div class="card w-100 p-3 text-center">
+                <h5
+                  class="card-title mb-2 fw-bold"
+                  style="font-family: var(--secondary-font)"
+                >
+                  Our Engagement
+                </h5>
+                <p class="card-text">
+                  Kehendak-Nya menuntun kita pada sebuah pertemuan indah yang
+                  tak pernah disangka, hingga akhirnya membawa kita pada langkah
+                  awal dan selangkah lebih dekat dengan ikatan suci yang
+                  dicintai-Nya tepat pada 4 Juni 2023. Kita berdua yakin inilah
+                  takdir terbaik kita, karena takdir terbaik adalah apa yang
+                  kita jalani sekarang.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 mb-3">
+            <div class="card w-100 p-3">
+              <img
+                src="./assets/Heart.svg"
+                alt=""
+                class="d-block mx-auto mb-3"
+                width="40"
+                height="40"
+              />
+              <div class="card w-100 p-3 text-center">
+                <h5
+                  class="card-title mb-2 fw-bold"
+                  style="font-family: var(--secondary-font)"
+                >
+                  The Wedding
+                </h5>
+                <p class="card-text">
+                  Suatu hari nanti seseorang akan melangkah masuk kedalam hidup
+                  kita dan kita akan mengerti mengapa selama ini Allah
+                  menginginkan hati kita untuk bersabar. Tidak ada yang pernah
+                  menyangka bahwa pertemuan saat itu akan membawa kita pada
+                  sebuah keputusan besar dalam hidup untuk mengikrarkan janji
+                  suci pernikahan di bulan Februari ini.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -397,22 +546,21 @@
       class="bg-white position-relative"
       style="width: 100vw; height: auto"
     >
-      <img src="./assets/AmplopWave.svg" alt="" style="width: 100vw" />
-      <div class="container py-3">
-        <div class="row mb-4 text-center">
+      <div class="container" style=""">
+        <div class="row mb-0 text-center" style="">
           <p
             class="fst-italic fw-normal"
             style="
               font-family: var(--style-font);
               color: var(--text-color);
-              font-size: 30px;
+              font-size: 44px;
             "
           >
-            Live Streaming
+            Wedding Day
           </p>
         </div>
         <div
-          class="row mb-5 justify-content-between text-center align-items-center"
+          class="row mb-5 justify-content-between text-center align-items-center" style="margin-top: -10px;"
         >
           <div class="col-12 col-sm-6 mb-4 mb-sm-0">
             <div
@@ -422,15 +570,21 @@
             >
               <div class="card-body">
                 <h5
-                  class="card-title fst-italic fw-bold"
-                  style="color: var(--text-color); font-size: 32px"
+                  class="card-title fw-bold"
+                  style="
+                    color: var(--secondary-color);
+                    font-family: var(--new-font);
+                    font-size: 32px;
+                    overflow: hidden;
+                  "
                 >
-                  Akad Nikah
+                  AKAD NIKAH
                 </h5>
-                <p class="card-text text-light">Kamis, 09 September 2023</p>
-                <p class="card-text text-light">Pukul 10.00 WIB</p>
+                <p class="card-text text-light">Minggu, 18 Februari 2024</p>
+                <p class="card-text text-light">Pukul 07.00 WIB</p>
                 <p class="card-text text-light">
-                  Alamat: Kel. Mimbaan Kec. Panji Kab.Situbondo
+                  Alamat : Dsn. Krajan RT 002 / RW 001, Desa Rangkang, Kec.
+                  Kraksaan, Kab. Probolinggo
                 </p>
               </div>
             </div>
@@ -443,19 +597,52 @@
             >
               <div class="card-body">
                 <h5
-                  class="card-title fst-italic fw-bold"
-                  style="color: var(--text-color); font-size: 32px"
+                  class="card-title fw-bold"
+                  style="
+                    color: var(--secondary-color);
+                    font-family: var(--new-font);
+                    font-size: 32px;
+                    overflow: hidden;
+                  "
                 >
-                  Resepsi
+                  RESEPSI
                 </h5>
-                <p class="card-text text-light">Kamis, 09 September 2023</p>
-                <p class="card-text text-light">Pukul 10.00 WIB</p>
+                <p class="card-text text-light">Minggu, 18 Februari 2024</p>
+                <p class="card-text text-light">Pukul 13.00 - 16.00 WIB</p>
                 <p class="card-text text-light">
-                  Alamat: Kel. Mimbaan Kec. Panji Kab.Situbondo
+                  Alamat : Dsn. Krajan RT 002 / RW 001, Desa Rangkang, Kec.
+                  Kraksaan, Kab. Probolinggo
                 </p>
               </div>
             </div>
           </div>
+          <!-- <div class="col-12 col-sm-6">
+            <div
+              class="card rounded-4"
+              id="card"
+              style="background-color: var(--main-color)"
+            >
+              <div class="card-body">
+                <h5
+                  class="card-title fst-italic fw-bold"
+                  style="
+                    color: var(--secondary-color);
+                    font-family: var(--style-font);
+                    font-size: 32px;
+                    overflow: hidden;
+                  "
+                >
+                  Resepsi
+                </h5>
+                <p class="card-text text-light">Sabtu, 24 Februari 2024</p>
+                <p class="card-text text-light">Pukul 13.00 - 16.00 WIB</p>
+                <p class="card-text text-light">
+                  Alamat: Selatan Pasar Panji, RT 002 RW 015 Kel. Mimbaan Kec.
+                  Panji Kab.Situbondo
+                </p>
+              </div>
+            </div>
+          </div> -->
         </div>
         <div
           class="row mb-5 justify-content-center text-center align-items-center"
@@ -464,9 +651,12 @@
             <a
               class="btn rounded-pill"
               id="btnLoc"
-              href="#"
+              href="http://bit.ly/47860MB"
               role="button"
-              style="background-color: var(--button-color)"
+              style="
+                background-color: var(--button-color);
+                color: var(--secondary-color);
+              "
               >Lihat Lokasi</a
             >
           </div>
@@ -475,7 +665,7 @@
     </section>
 
     <section
-      class="position-relative"
+      class=""
       style="
         background-color: var(--secondary-color);
         width: 100vw;
@@ -483,7 +673,7 @@
         z-index: -1;
       "
     >
-      <img
+      <!-- <img
         src="./assets/daun.svg"
         alt=""
         class="position-absolute"
@@ -510,12 +700,17 @@
         class="position-absolute"
         style="width: 30px; top: 10px; right: -10px"
         id="daun2"
-      />
+      /> -->
       <div class="container py-5 px-3">
         <div class="row">
           <h1
             class="text-center mb-4"
-            style="font-family: var(--style-font); color: var(--text-color)"
+            style="
+              font-family: var(--style-font);
+              color: var(--text-color);
+              overflow: hidden;
+              font-size: 44px;
+            "
           >
             Amplop Digital
           </h1>
@@ -527,10 +722,10 @@
             kado secara cashless
           </p>
           <div class="col-12">
-            <div class="text-center position-absolute">
+            <div class="text-center">
               <button
                 type="button"
-                class="btn rounded-5"
+                class="btn rounded-5 text-white"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseExample"
                 aria-expanded="false"
@@ -542,16 +737,16 @@
             </div>
             <div
               id="collapseExample"
-              class="pt-4 position-absolute collapse"
+              class="pt-4 collapse"
               style="z-index: 99; right: 50%; left: 50%"
             >
-              <div class="row mb-5 g-4 justify-content-between">
-                <div class="col-12 col-md-5">
+              <div class="row mb-5 gap-4 gap-sm-4">
+                <div class="col-12 col-md-6">
                   <div class="card rounded-5" id="atm">
                     <div class="card-body py-0">
                       <div class="text-end">
                         <img
-                          src="./assets/Logo BCA.png"
+                          src="./assets/logo Bank.png"
                           class="text-end"
                           alt=""
                           width="100"
@@ -565,9 +760,11 @@
                         />
                       </div>
                       <h5 class="card-title text-start" id="noRek">
-                        1234 5678 9101
+                        0292550685
                       </h5>
-                      <h5 class="card-title text-start">FIKRI</h5>
+                      <h5 class="card-title text-start">
+                        Fikri Sirrul Bari Amrullah
+                      </h5>
                       <div class="text-end mb-3">
                         <button
                           onclick="copyText()"
@@ -580,18 +777,18 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-md-6">
                   <div class="card rounded-5" id="atm">
                     <div class="card-body py-0">
-                      <div class="text-end mt-3">
+                      <div class="text-end">
                         <img
-                          src="./assets/Logo Dana.png"
+                          src="./assets/BRI.png"
                           class="text-end"
                           alt=""
                           width="100"
                         />
                       </div>
-                      <div class="text-start" style="visibility: hidden">
+                      <div class="text-start">
                         <img
                           src="./assets/img/chip (1).png"
                           alt=""
@@ -603,13 +800,13 @@
                         id="noRek"
                         style="font-family: var(--atm-font)"
                       >
-                        1234 5678 9101
+                        180701001609535
                       </h5>
                       <h5
                         class="card-title text-start"
                         style="font-family: var(--atm-font)"
                       >
-                        FIKRI
+                        Prita Paramitha Fatmawati
                       </h5>
                       <div class="text-end mb-3">
                         <button
@@ -624,60 +821,6 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <h1
-                  class="text-center text-white mb-4"
-                  style="font-family: var(--style-font)"
-                >
-                  Ucapkan Sesuatu
-                </h1>
-                <p class="text-center" style="color: var(--text-color)">
-                  Berikan Ucapan & Doa Restu
-                </p>
-                <div class="col-12">
-                  <div class="px-3 py-3 rounded-4 bg-secondary">
-                    <form>
-                      <div class="mb-3">
-                        <label class="form-label text-white">Nama</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="exampleInputEmail1"
-                          aria-describedby="default input example"
-                        />
-                      </div>
-                      <div class="mb-3">
-                        <label class="form-label text-white">Ucapan</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="exampleInputPassword1"
-                        />
-                      </div>
-                      <div class="mb-4">
-                        <label class="form-label text-white">Kehadiran</label>
-                        <select
-                          class="form-select"
-                          aria-label="Default select example"
-                        >
-                          <option selected disabled>Hadir/Tidak Hadir</option>
-                          <option value="1">Hadir</option>
-                          <option value="2">Tidak Hadir</option>
-                        </select>
-                      </div>
-                      <div class="text-center">
-                        <button
-                          type="submit"
-                          class="btn text-white"
-                          style="background-color: var(--main-color)"
-                        >
-                          Submit
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -685,17 +828,6 @@
     </section>
 
     <section class="" style="background-color: var(--main-color); width: 100vw">
-      <button
-        type="button"
-        class="btn rounded-5"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapseExample"
-        aria-expanded="false"
-        aria-controls="collapseExample"
-        style="background-color: var(--button-color)"
-      >
-        Kirim Hadiah
-      </button>
       <div class="container py-1">
         <div class="row text-center d-flex justify-content-center">
           <div class="col-12">
@@ -721,29 +853,27 @@
       </div>
     </section>
 
-    <section
-      class=""
-      id="header"
-      style="background-color: var(--main-color); width: 100vw; height: auto"
-    >
-      <div class="container py-5 px-5">
+    <section class="bg-primary" id="header">
+      <div class="container py-5">
         <div
-          class="row mb-5 d-flex justify-content-between text-center align-items-center"
+          class="row mb-5 d-flex justify-content-center text-center align-items-center"
         >
-          <div class="col-12">
+          <div
+            class="bg-black d-flex rounded-circle overflow-hidden"
+            style="width: 250px; height: 250px"
+          >
             <img
-              src="./assets/img/unsplash_wSBQFWF77lI.png"
+              src="./assets/img/Last.jpg"
               alt=""
-              class="rounded-circle"
-              width="300"
-              height="300"
+              class="img-fluid"
+              style="object-fit: cover; width: 100%; height: 100%"
             />
           </div>
         </div>
         <div class="row text-center align-items-center">
           <div class="col-12 mb-3">
-            <p style="color: var(--text-color); font-size: 16px">
-              Merupakan suatu kehormatan dan kebahagiaan bagi kami,apabila
+            <p style="color: white; font-size: 16px">
+              Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila
               Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas
               kehadiran dan doa restunya, kami mengucapkan terima kasih
             </p>
@@ -751,63 +881,108 @@
           <div class="col-12 mb-3">
             <p
               class="fst-italic fw-normal text-white"
-              style="font-size: 20px; font-family: var(--style-font)"
+              style="font-size: 34px; font-family: var(--style-font)"
             >
               Wassalamu’alaikum Wr. Wb.
             </p>
           </div>
           <div class="col-12">
             <p
-              class="fw-semibold text-white"
-              style="font-size: 28px; font-family: var(--style-font)"
+              class="text-white"
+              style="font-size: 48px; font-family: var(--style-font)"
             >
-              Fikri & Prita
+              Fikri <span style="font-size: 26px;">
+                &hearts;
+              </span>Prita
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- <section class="py-3" style="width: 100vw">
+    <section class="py-3" style="width: 100vw">
       <div class="row justify-content-center text-center align-items-center">
-        <div class="col-12">
-          <h1 style="font-family: var(--style-font)">Gallery Foto</h1>
+        <div class="col-12 px-5">
+          <h1 style="font-family: var(--style-font); font-size: 44px;">Our Gallery</h1>
           <div
-            id="carouselExampleSlidesOnly"
-            class="carousel slide mx-5"
-            data-mdb-ride="carousel"
-            data-mdb-carousel-init
+            style="
+              --swiper-navigation-color: #fff;
+              --swiper-pagination-color: #fff;
+            "
+            class="swiper mySwiper2"
           >
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp"
-                  class="d-block w-100"
-                  alt="Wild Landscape"
-                  style="width: 100vw"
-                />
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_26_IMG_1082.JPG" />
               </div>
-              <div class="carousel-item">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
-                  class="d-block"
-                  alt="Camera"
-                  style="width: 100vw"
-                />
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_28_IMG_1089.JPG" />
               </div>
-              <div class="carousel-item">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"
-                  class="d-block w-100"
-                  alt="Exotic Fruits"
-                  style="width: 100vw"
-                />
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_29_IMG_1093.JPG" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_32_IMG_1110.JPG" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_37_IMG_1122.JPG" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_39_IMG_1126.JPG" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_39_IMG_1129.JPG" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_40_IMG_1130.JPG" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_41_IMG_1133.JPG" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_44_IMG_1139.JPG" />
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+          <div thumbsSlider="" class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_26_IMG_1082.JPG" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_28_IMG_1089.JPG" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_29_IMG_1093.JPG" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_32_IMG_1110.JPG" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_37_IMG_1122.JPG" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_39_IMG_1126.JPG" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_39_IMG_1129.JPG" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_40_IMG_1130.JPG" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_41_IMG_1133.JPG" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/img/2023_12_03_17_44_IMG_1139.JPG" />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <script>
       function copyText() {
@@ -847,6 +1022,63 @@
           document.getElementById("seconds").innerHTML = "";
         }
       }, 1000); // Update every 1 second
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Ambil elemen audio dan tombol play/pause
+        var audio = document.getElementById("audio");
+        var playpausebtn = document.getElementById("playpausebtn");
+        var playpauseimg = document.getElementById("playpauseimg");
+
+        // Fungsi untuk memutar atau menghentikan lagu
+        function togglePlay() {
+          if (audio.paused || audio.ended) {
+            playpauseimg.src = "pause-icon.png"; // Ganti dengan path ke ikon pause
+            audio.play();
+          } else {
+            playpauseimg.src = "play-icon.png"; // Ganti dengan path ke ikon play
+            audio.pause();
+          }
+        }
+
+        // Tambahkan event listener ke tombol play/pause
+        playpausebtn.addEventListener("click", togglePlay);
+
+        // Update tombol play/pause saat status pemutaran berubah
+        audio.addEventListener("play", function () {
+          playpauseimg.src = "pause-icon.png"; // Ganti dengan path ke ikon pause
+        });
+
+        audio.addEventListener("pause", function () {
+          playpauseimg.src = "play-icon.png"; // Ganti dengan path ke ikon play
+        });
+
+        // Tambahkan event listener ke elemen body
+        document.body.addEventListener("click", function () {
+          // Cek apakah lagu sudah diputar atau belum
+          if (audio.paused) {
+            audio.play();
+          }
+        });
+      });
+
+      var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+      });
+      var swiper2 = new Swiper(".mySwiper2", {
+        loop: true,
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+          swiper: swiper,
+        },
+      });
     </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

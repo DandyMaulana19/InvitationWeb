@@ -7,9 +7,21 @@
   --style-font: "Great Vibes", cursive;
   --secondary-font: "Courgette", cursive;
   --atm-font: "credit-card-regular", sans-serif;
+  --baru-font: "Fall in love" sans-serif;
+  --new-font: "EB Garamond", serif;
+}
+
+@font-face {
+  font-family: Tahu!;
+  src: url("./assets/Tahu!.otf");
+}
+
+body {
 }
 
 * {
+  /* border: 2px solid red; */
+  overflow-x: hidden;
   margin: 0px;
   padding: 0px;
   font-family: var(--formal-font);
@@ -64,10 +76,86 @@ section {
   transform: rotate(30deg);
 }
 
-#daun {
-  transform: scaleX(-1) rotate(250deg);
-}
-
 #daun2 {
   transform: rotate(250deg);
+}
+
+.fixed-controls {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  width: 100vw;
+}
+
+#playpauseimg {
+  width: 30px; /* Adjust the size as needed */
+  height: 30px; /* Adjust the size as needed */
+}
+
+.carousel-item img {
+  object-fit: cover;
+  max-height: 100vh;
+  width: 100%;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.mySwiper2 {
+  height: 80%;
+  width: 100%;
+}
+
+.mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
