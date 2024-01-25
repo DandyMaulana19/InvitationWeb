@@ -2,6 +2,7 @@
   --main-color: #43689f;
   --text-color: #434343;
   --secondary-color: #fffcf9;
+  --melee-color: #fffaf3;
   --button-color: #587ba4;
   --formal-font: "Montserrat", sans-serif;
   --style-font: "Great Vibes", cursive;
@@ -66,6 +67,29 @@ section {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  object-position: center;
+}
+
+#countdownImg1 {
+  object-fit: contain;
+  width: 150%;
+  height: 150%;
+  top: -10%;
+  right: 25%;
+}
+
+#countdownImg2 {
+  object-fit: contain;
+  width: 150%;
+  height: 150%;
+  top: -5%;
+  right: 25%;
+}
+
+#lastImg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 #profile1 {
@@ -80,19 +104,19 @@ section {
   transform: rotate(250deg);
 }
 
-.fixed-controls {
+/* .fixed-controls {
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 999;
   width: 100vw;
-}
+} */
 
 #playpauseimg {
   width: 30px; /* Adjust the size as needed */
   height: 30px; /* Adjust the size as needed */
 }
-
+/* 
 .carousel-item img {
   object-fit: cover;
   max-height: 100vh;
@@ -158,4 +182,32 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
+} */
+
+.audio-icon-wrapper {
+  width: 2rem;
+  height: 2rem;
+  font-size: 2rem;
+  position: fixed;
+  bottom: 2.5rem;
+  right: 1rem;
+  cursor: pointer;
+  color: white;
+  opacity: 0.5;
+  mix-blend-mode: difference;
+  animation: rotating 4s linear infinite;
+  transform-origin: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
