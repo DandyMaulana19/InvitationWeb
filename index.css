@@ -46,7 +46,7 @@ section {
 }
 
 #cover {
-  background-image: url("./assets/img/Cover.JPG");
+  background-image: url("./assets/img/Cover.jpg");
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -90,6 +90,7 @@ section {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  object-position: center;
 }
 
 #profile1 {
@@ -98,6 +99,14 @@ section {
 
 #profile1l {
   transform: rotate(30deg);
+}
+
+#profile2 {
+  transform: rotate(180deg);
+}
+
+#profile2l {
+  transform: rotate(-20deg);
 }
 
 #daun2 {
