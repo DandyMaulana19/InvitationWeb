@@ -17,9 +17,6 @@
   src: url("./assets/Tahu!.otf");
 }
 
-body {
-}
-
 * {
   /* border: 2px solid red; */
   overflow-x: hidden;
@@ -114,8 +111,8 @@ section {
 }
 
 #playpauseimg {
-  width: 30px; /* Adjust the size as needed */
-  height: 30px; /* Adjust the size as needed */
+  width: 30px;
+  height: 30px;
 }
 
 .audio-icon-wrapper {
