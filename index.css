@@ -42,11 +42,16 @@ section {
   background-size: cover;
 }
 
-#cover {
-  background-image: url("./assets/img/Cover.jpg");
+/* #cover {
   background-size: cover;
   background-position: center;
   overflow: hidden;
+} */
+
+.center-img {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #bukaUndangan {
